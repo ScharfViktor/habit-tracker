@@ -1,29 +1,13 @@
-import { Text, View,  StyleSheet } from 'react-native';
-import { Link } from 'expo-router';
+import React from 'react';
+import { AppRegistry } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'; // Добавляем NavigationContainer
+import appJson from '../app.json';
+import AppNavigator from '../src/navigation/AppNavigator';
 
-export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home screen</Text>
-      <Link href="/goal-tracker">Перейти в трекер целей</Link>
-      <Link href="/habit-tracker">Перейти в трекер привычек</Link>
-    </View>
-  );
-}
+const appName = appJson.expo.name;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#25292e',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#fff',
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: 'underline',
-    color: '#fff',
-  },
-});
+const App = () => <AppNavigator />;
+
+export default App;
+
+AppRegistry.registerComponent(appName, () => App);
