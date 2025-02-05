@@ -2,6 +2,7 @@
   "expo": {
     "entryPoint": "./index.tsx",
     "name": "habit-tracker",
+    "description": "A habit tracking application",
     "slug": "habit-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
